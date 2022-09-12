@@ -1,7 +1,7 @@
 package com.bridgelab;
 
 public class MoodAnalyzer {
-    private String  message;
+    private String message;
 
     public MoodAnalyzer() {
     }
@@ -9,11 +9,19 @@ public class MoodAnalyzer {
     public MoodAnalyzer(String message) {
         this.message = message;
     }
+
     public String analyseMood() {
-        if (message.contains("Sad")) {
-            return "SAD";
-        } else {
-            return "HAPPY";
+        try {
+            if (message.contains("Sad")) {
+                return "SAD";
+            }
+            else {
+                return "HAPPY";
+            }
+        }
+        catch (Exception e)
+        {
+            return null;
         }
     }
 }

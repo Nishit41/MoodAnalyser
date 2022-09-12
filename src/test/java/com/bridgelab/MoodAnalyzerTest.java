@@ -17,4 +17,10 @@ public class MoodAnalyzerTest {
         String mood = moodAnalyzer.analyseMood();
         Assertions.assertEquals("HAPPY",mood);
     }
+    @Test
+    void givenUser_Provides_Invalid_MoodForNUllPointer_Exception(){
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
+        String mood = moodAnalyzer.analyseMood();
+        Assertions.assertEquals("happy",mood);
+    }
 }
